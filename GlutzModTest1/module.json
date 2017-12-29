@@ -1,0 +1,14 @@
+{
+	"id": "{F7D4168F-D096-4F97-85F9-F095534B7619}",
+	"name": "GlutzModTest1",
+	"type": 3,
+	"vendor": "",
+	"aliases":
+	[
+		"GlutzTest1"
+	],
+	"parentRequirements": [],
+	"childRequirements": [],
+	"implemented": [],
+	"prefix": "GLUTZ"
+}
