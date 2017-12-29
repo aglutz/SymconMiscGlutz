@@ -16,7 +16,7 @@
             // Diese Zeile nicht löschen.
             parent::Create();
 
-            $this->RegisterTimer("UpdateTimer", 10 * 1000, 'GLUTZ_UpdateInstance($_IPS[\'TARGET\']);');
+            $this->RegisterTimer("UpdateTimer", 20 * 1000, 'GLUTZ_UpdateInstance($_IPS[\'TARGET\']);');
         }
 
         // Überschreibt die intere IPS_ApplyChanges($id) Funktion
@@ -39,7 +39,7 @@
 
         public function UpdateInstance() {
             // Selbsterstellter Code
-            echo "Hello Update Event.....change via github";
+            echo "Hello Update Event...";
         }
 
 
