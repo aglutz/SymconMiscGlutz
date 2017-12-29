@@ -39,7 +39,7 @@
 
         public function UpdateInstance() {
             // Selbsterstellter Code
-            echo "Hello Update Event.....";
+            echo "Hello Update Event.....neu via GitHub";
         }
 
 
