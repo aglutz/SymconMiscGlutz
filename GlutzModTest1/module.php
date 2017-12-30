@@ -2,6 +2,8 @@
     // Klassendefinition
     class GlutzModTest1 extends IPSModule {
 
+        public int VarChangeCounter = 0;
+
         // Der Konstruktor des Moduls
         // Überschreibt den Standard Kontruktor von IPS
         public function __construct($InstanceID) {
@@ -15,8 +17,13 @@
         public function Create() {
             // Diese Zeile nicht löschen.
             parent::Create();
+
             $this->RegisterPropertyInteger("Interval", 10);
             $this->RegisterTimer("UpdateTimer", 0, 'GLUTZ_UpdateInstance($_IPS[\'TARGET\']);');
+
+            // var change timestamp
+            $this->VarChangeCounter = json_decode(IPS_GetSnapshotChanges(0), True)[0]["TimeStamp"];
+
         }
 
         // Überschreibt die intere IPS_ApplyChanges($id) Funktion
@@ -25,7 +32,7 @@
             parent::ApplyChanges();
 
             $this->SetTimerInterval("UpdateTimer", $this->ReadPropertyInteger("Interval")*1000);
-
+            json_decode(IPS_GetSnapshotChanges(0), True)[0]["TimeStamp"];
         }
 
         /**
@@ -42,7 +49,7 @@
 
         public function UpdateInstance() {
             // Selbsterstellter Code
-            echo "Hello Update Event...";
+            echo $this->VarChangeCounter;
         }
 
 
