@@ -15,14 +15,17 @@
         public function Create() {
             // Diese Zeile nicht löschen.
             parent::Create();
-
-            $this->RegisterTimer("UpdateTimer", 20 * 1000, 'GLUTZ_UpdateInstance($_IPS[\'TARGET\']);');
+            $this->RegisterPropertyInteger("Interval", 10);
+            $this->RegisterTimer("UpdateTimer", 0, 'GLUTZ_UpdateInstance($_IPS[\'TARGET\']);');
         }
 
         // Überschreibt die intere IPS_ApplyChanges($id) Funktion
         public function ApplyChanges() {
             // Diese Zeile nicht löschen
             parent::ApplyChanges();
+
+            $this->SetTimerInterval("UpdateTimer", $this->ReadPropertyInteger("Interval")*1000);
+
         }
 
         /**
