@@ -2,7 +2,7 @@
     // Klassendefinition
     class GlutzModTest1 extends IPSModule {
 
-        public int VarChangeCounter = 0;
+        private $VarChangeCounter = 0;
 
         // Der Konstruktor des Moduls
         // Überschreibt den Standard Kontruktor von IPS
