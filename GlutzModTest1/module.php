@@ -13,7 +13,7 @@
             // Selbsterstellter Code
             // var change timestamp
             $this->VarChangeCounter = json_decode(IPS_GetSnapshotChanges(0), True)[0]["TimeStamp"];
-
+            echo "Konstruktor..."
         }
 
         // Überschreibt die interne IPS_Create($id) Funktion
