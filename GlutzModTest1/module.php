@@ -50,6 +50,7 @@
         public function UpdateInstance() {
             // Selbsterstellter Code
             echo $this->VarChangeCounter;
+            echo "Property:".$this->ReadPropertyInteger("Interval");
         }
 
 
